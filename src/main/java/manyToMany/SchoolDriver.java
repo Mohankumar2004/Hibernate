@@ -54,6 +54,9 @@ public class SchoolDriver {
 			}
 		}
 	}
+	public void displaysubject() {
+		
+	}
 	
 	public void updatestudent() {
 		et.begin();
