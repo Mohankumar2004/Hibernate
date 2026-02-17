@@ -1,0 +1,17 @@
+oneToMany\schools.class
+oneToMany\udriver.class
+student\studententity.class
+oneToMany\rdriver.class
+student\car.class
+oneToMany\ddriver.class
+school\principal.class
+school\school.class
+student\vehicalDriver.class
+school\student.class
+oneToMany\students.class
+student\studentservice.class
+manyToOne\bank.class
+student\engin.class
+student\principalentity.class
+student\pricipalservice.class
+manyToOne\accounts.class
