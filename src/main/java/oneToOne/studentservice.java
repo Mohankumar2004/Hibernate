@@ -1,4 +1,4 @@
-package student;
+package oneToOne;
 
 public class studentservice {
 	
