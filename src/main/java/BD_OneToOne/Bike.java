@@ -1,5 +1,6 @@
 package BD_OneToOne;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
@@ -10,7 +11,7 @@ public class Bike {
 	private int id;
 	private String name;
 	private int price;
-	@OneToOne(mappedBy = "bike")
+	@OneToOne(mappedBy = "bike" , cascade = CascadeType.ALL)
 	private Engine engine;
 	public int getId() {
 		return id;

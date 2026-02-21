@@ -1,4 +1,4 @@
-package oneToMany;
+package BD_OneToMany_ManyToOne;
 
 import java.util.List;
 
@@ -8,13 +8,12 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 
 @Entity
-public class Bank {
+public class Bank1 {
 	@Id
 	private int id;
 	private String name;
 	@OneToMany(cascade = CascadeType.ALL)
-	
-	private List<Account> account;
+	private List<Account1> account;
 	public int getId() {
 		return id;
 	}
@@ -27,11 +26,10 @@ public class Bank {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public List<Account> getAccount() {
+	public List<Account1> getAccount() {
 		return account;
 	}
-	public void setAccount(List<Account> account) {
+	public void setAccount(List<Account1> account) {
 		this.account = account;
 	}
-	
 }

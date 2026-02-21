@@ -15,20 +15,20 @@ public class BankDriver {
 	
 	
 	public void save() {
-		Account account=new Account();
+		Accountss account=new Accountss();
 		account.setId(1);
 		account.setName("Mohankumar");
 		account.setBalance(10000);
-		Account account1=new Account();
+		Accountss account1=new Accountss();
 		account1.setId(2);
 		account1.setName("Mmk");
 		account1.setBalance(20000);
 		
-		List<Account> list=new ArrayList<Account>();
+		List<Accountss> list=new ArrayList<Accountss>();
 		list.add(account);
 		list.add(account1);
 		
-		Bank bank=new Bank();
+		Bankss bank=new Bankss();
 		bank.setId(1);
 		bank.setName("SBI");
 		bank.setAccount(list);
@@ -42,10 +42,10 @@ public class BankDriver {
 	
 	
 	public void display() {
-		Bank bank=em.find(Bank.class, 1);
+		Bankss bank=em.find(Bankss.class, 1);
 		if(bank!=null && bank.getAccount()!=null)
 		{
-			for (Account account : bank.getAccount()) {
+			for (Accountss account : bank.getAccount()) {
 				System.out.println(account.getName()+" has account in "+bank.getName());
 			}
 			
@@ -54,11 +54,11 @@ public class BankDriver {
 	
 	
 	public void update() {
-		Bank bank=em.find(Bank.class, 1);
+		Bankss bank=em.find(Bankss.class, 1);
 		if(bank!=null && bank.getAccount()!=null)
 		{
 			et.begin();
-			for(Account account : bank.getAccount())
+			for(Accountss account : bank.getAccount())
 			{
 				account.setBalance(account.getBalance()-50);
 			}
@@ -70,8 +70,8 @@ public class BankDriver {
 	
 	public void delete() {
 		et.begin();
-		Bank bank=em.find(Bank.class, 1);
-		Account account=em.find(Account.class, 101);
+		Bankss bank=em.find(Bankss.class, 1);
+		Accountss account=em.find(Accountss.class, 101);
 		if(bank!=null && account!=null)
 		{
 			bank.getAccount().remove(account);
@@ -82,10 +82,10 @@ public class BankDriver {
 	
 	//add account in the existing bank
 	public void addaccount() {
-		Account ac=new Account();
+		Accountss ac=new Accountss();
 
 		et.begin();
-		Bank bank=em.find(Bank.class, 1);
+		Bankss bank=em.find(Bankss.class, 1);
 		
 		if(bank!=null)
 		{
@@ -103,13 +103,13 @@ public class BankDriver {
 	
 	public void updateaccountwithoutcascade() {
 		et.begin();
-		Bank bank=em.find(Bank.class, 1);
-		Account accountupdate=null;
-		Account account= em.find(Account.class, 101);
+		Bankss bank=em.find(Bankss.class, 1);
+		Accountss accountupdate=null;
+		Accountss account= em.find(Accountss.class, 101);
 		if(bank!=null && account!=null)
 		{
-			List<Account> list =bank.getAccount();
-			for (Account account2 : list) {
+			List<Accountss> list =bank.getAccount();
+			for (Accountss account2 : list) {
 				if(account.getId()==account2.getId()) {
 					account2.setName("mmm");
 					accountupdate=account2;
@@ -125,13 +125,13 @@ public class BankDriver {
 	
 	public void updateaccountwithcascade() {
 		et.begin();
-		Bank bank=em.find(Bank.class, 1);
+		Bankss bank=em.find(Bankss.class, 1);
 		
-		Account account= em.find(Account.class, 101);
+		Accountss account= em.find(Accountss.class, 101);
 		if(bank!=null && account!=null)
 		{
-			List<Account> list =bank.getAccount();
-			for (Account account2 : list) {
+			List<Accountss> list =bank.getAccount();
+			for (Accountss account2 : list) {
 				if(account.getId()==account2.getId()) {
 					account2.setBalance(100000);
 					break;
@@ -144,7 +144,7 @@ public class BankDriver {
 	
 	public void updatebank(){
 		et.begin();
-		Bank bank=em.find(Bank.class, 1);
+		Bankss bank=em.find(Bankss.class, 1);
 		if(bank!=null)
 		{
 			bank.setName("SBIYono");
@@ -156,7 +156,7 @@ public class BankDriver {
 	}
 	
 	public void deletebank() {
-		Bank bank=em.find(Bank.class, 1);
+		Bankss bank=em.find(Bankss.class, 1);
 		if(bank!=null)
 		{
 			em.remove(bank);

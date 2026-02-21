@@ -1,19 +1,17 @@
-package manyToOne;
+package BD_OneToMany_ManyToOne;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
 @Entity
-public class accounts {
+public class Account1 {
 	@Id
 	private int id;
 	private String name;
-	private int age;
+	private int balance;
 	@ManyToOne
-	@JoinColumn(name = "bank_id")
-	private banks bank;
+	private Bank1 bank;
 	public int getId() {
 		return id;
 	}
@@ -26,17 +24,18 @@ public class accounts {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int getAge() {
-		return age;
+	
+	public int getBalance() {
+		return balance;
 	}
-	public void setAge(int age) {
-		this.age = age;
+	public void setBalance(int balance) {
+		this.balance = balance;
 	}
-	public banks getBank() {
+	public Bank1 getBank() {
 		return bank;
 	}
-	public void setBank(banks bank) {
-		this.bank=bank;
+	public void setBank(Bank1 bank) {
+		this.bank = bank;
 	}
 	
 }

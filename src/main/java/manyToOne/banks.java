@@ -9,7 +9,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 
 @Entity
-public class bank {
+public class banks {
 	@Id
 	private int id;
 	private String name;
